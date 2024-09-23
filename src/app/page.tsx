@@ -10,7 +10,12 @@ export default function Page() {
             Home
           </a>
           <a href="https://manasmalla.dev">My Portfolio</a>
-          <a className="text-blue-600 font-medium">Suggest an idea?</a>
+          <a
+            href="mailto:me@manasmalla.dev"
+            className="text-blue-600 font-medium"
+          >
+            Suggest an idea?
+          </a>
         </nav>
       </div>
       <div className="text-center pt-36 py-24 mb-6 bg-blue-50 relative overflow-clip">
