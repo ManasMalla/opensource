@@ -36,7 +36,7 @@ export default function Page() {
         />
       </div>
       <section id="projects" className="px-5 md:px-8">
-        <div className="flex my-5 items-start justify-between">
+        <div className="flex flex-col-reverse md:flex-row my-5 items-start justify-between">
           <div>
             <h3 className="text-xl mb-4 font-medium">Projects</h3>
             <p className="text-sm max-w-[42ch] md:max-w-[50%]">
@@ -48,7 +48,7 @@ export default function Page() {
           </div>
           <img
             src="https://opensource.google/static/images/projects/os-shapes-blue.svg"
-            className="mt-4 max-w-40 md:max-w-[unset]"
+            className="my-6 md:mt-4 md:mb-0 max-w-40 md:max-w-[unset]"
           />
         </div>
         <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1">
