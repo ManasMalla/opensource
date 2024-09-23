@@ -1,101 +1,95 @@
-import Image from "next/image";
-
-export default function Home() {
+export default function Page() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
+    <div className="p-5 pt-0 px-0">
+      <div className="p-5 shadow-md fixed top-0 bg-white w-full z-10 flex items-center justify-between text-neutral-500 font-medium">
+        <a href="/" className="text-neutral-600">
+          Manas Malla
+        </a>
+        <nav className="flex gap-4 md:gap-8 text-sm md:text-base">
+          <a href="/" className="hidden md:flex">
+            Home
+          </a>
+          <a href="https://manasmalla.dev">My Portfolio</a>
+          <a className="text-blue-600 font-medium">Suggest an idea?</a>
+        </nav>
+      </div>
+      <div className="text-center pt-36 py-24 mb-6 bg-blue-50 relative overflow-clip">
+        <h1 className="text-6xl mb-6">
+          Welcome to
+          <br />
+          Open Source
+        </h1>
+        <a
+          href="/#projects"
+          className="bg-blue-600 py-2 px-6 pr-4 text-white rounded-full inline-flex gap-2"
+        >
+          Explore{" "}
+          <span className="material-symbols-rounded">arrow_forward</span>
+        </a>
+        <img
+          src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiDa_aWprUuwxdb9QLGHWUyUy_kkJfNhH4uj-04R3BCpOBk4TcmDCRQLYyWFXu3VqVV9m41R63WlpeGTPzuu1rI6D6LmdTcSLY5mgpwXud-8S2G9b8_CFJvBCux3YZ0QJa7MwCZXIEyb1naPhbN8Mpx2xwMyKZuBK9pQYCizBO_Xf6FzYekhd34EvjWsjk/s1600/OS-New-Library-for-Network-Optimization-social%20%281%29%20%281%29.png"
+          className="mix-blend-luminosity opacity-10 absolute w-1/3 -bottom-12"
         />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+        <img
+          src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiDa_aWprUuwxdb9QLGHWUyUy_kkJfNhH4uj-04R3BCpOBk4TcmDCRQLYyWFXu3VqVV9m41R63WlpeGTPzuu1rI6D6LmdTcSLY5mgpwXud-8S2G9b8_CFJvBCux3YZ0QJa7MwCZXIEyb1naPhbN8Mpx2xwMyKZuBK9pQYCizBO_Xf6FzYekhd34EvjWsjk/s1600/OS-New-Library-for-Network-Optimization-social%20%281%29%20%281%29.png"
+          className="mix-blend-luminosity opacity-10 absolute w-1/3 -top-12 right-0"
+        />
+      </div>
+      <section id="projects" className="px-5 md:px-8">
+        <div className="flex my-5 items-start justify-between">
+          <div>
+            <h3 className="text-xl mb-4 font-medium">Projects</h3>
+            <p className="text-sm max-w-[42ch] md:max-w-[50%]">
+              I believe open source solves real-world problems for everyone
+              through innovation, collaboration, and sustainability. I encourage
+              you to browse through my featured projects to find work to use,
+              share, and build on!
+            </p>
+          </div>
+          <img
+            src="https://opensource.google/static/images/projects/os-shapes-blue.svg"
+            className="mt-4 max-w-40 md:max-w-[unset]"
+          />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1">
+          <div className="border rounded-lg overflow-hidden">
+            {/* <img
+              src="https://support.content.office.net/en-us/media/02cd7402-1116-40fe-98d9-65bb8a48544c.png"
+              className="w-full aspect-[1.8] object-cover"
+            /> */}
+            <img
+              src="https://www.sketchappsources.com/resources/source-image/microsoft-teams-illustration.png"
+              className="w-full aspect-[1.8] object-cover"
+            />
+            <div className="p-5">
+              <p className="text-xl">CommunityX</p>
+              <p className="text-sm mt-4 mb-2 line-clamp-4">
+                A simple, easy-to-use community management platform to build
+                rich conversations, enabling them with all the tools and
+                features to build rich communities, set out to create engaging
+                experiences, and solve the problems of the people around them.
+              </p>
+              <div>
+                <p className="inline-flex py-[6px] px-[8px] rounded-md mx-[3px] my-[3px] border text-sm border-neutral-500 text-neutral-600">
+                  Multiplatform
+                </p>
+                <p className="inline-flex py-[6px] px-[8px] rounded-md mx-[3px] my-[3px] border text-sm border-neutral-500 text-neutral-600">
+                  Kotlin
+                </p>
+                <p className="inline-flex py-[6px] px-[8px] rounded-md mx-[3px] my-[3px] border text-sm border-neutral-500 text-neutral-600">
+                  Swift
+                </p>
+                <p className="inline-flex py-[6px] px-[8px] rounded-md mx-[3px] my-[3px] border text-sm border-neutral-500 text-neutral-600">
+                  Typescript
+                </p>
+              </div>
+              <button className="border py-2 px-6 text-sm mt-8 text-blue-500 rounded-md font-medium">
+                View Project
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
