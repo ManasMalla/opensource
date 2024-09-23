@@ -51,43 +51,96 @@ export default function Page() {
             className="my-6 md:mt-4 md:mb-0 max-w-40 md:max-w-[unset]"
           />
         </div>
-        <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1">
-          <div className="border rounded-lg overflow-hidden">
-            {/* <img
-              src="https://support.content.office.net/en-us/media/02cd7402-1116-40fe-98d9-65bb8a48544c.png"
-              className="w-full aspect-[1.8] object-cover"
-            /> */}
-            <img
-              src="https://www.sketchappsources.com/resources/source-image/microsoft-teams-illustration.png"
-              className="w-full aspect-[1.8] object-cover"
-            />
-            <div className="p-5">
-              <p className="text-xl">CommunityX</p>
-              <p className="text-sm mt-4 mb-2 line-clamp-4">
-                A simple, easy-to-use community management platform to build
-                rich conversations, enabling them with all the tools and
-                features to build rich communities, set out to create engaging
-                experiences, and solve the problems of the people around them.
-              </p>
-              <div>
-                <p className="inline-flex py-[6px] px-[8px] rounded-md mx-[3px] my-[3px] border text-sm border-neutral-500 text-neutral-600">
-                  Multiplatform
-                </p>
-                <p className="inline-flex py-[6px] px-[8px] rounded-md mx-[3px] my-[3px] border text-sm border-neutral-500 text-neutral-600">
-                  Kotlin
-                </p>
-                <p className="inline-flex py-[6px] px-[8px] rounded-md mx-[3px] my-[3px] border text-sm border-neutral-500 text-neutral-600">
-                  Swift
-                </p>
-                <p className="inline-flex py-[6px] px-[8px] rounded-md mx-[3px] my-[3px] border text-sm border-neutral-500 text-neutral-600">
-                  Typescript
-                </p>
+        <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4 md:gap-8">
+          {[
+            {
+              name: "CommunityX",
+              description:
+                "A simple, easy-to-use community management platform to build rich conversations, enabling them with all the tools and features to build rich communities, set out to create engaging experiences, and solve the problems of the people around them.",
+              tags: ["Multiplatform", "Kotlin", "Swift", "Typescript"],
+              image:
+                "https://www.sketchappsources.com/resources/source-image/microsoft-teams-illustration.png",
+            },
+            {
+              name: "IndieLingo",
+              description:
+                "A Duolingo-style language learning application built for over 35+ Indic languages through bite-sized lessons and activities.",
+              tags: ["Flutter", "Dart", "Native", "Machine Learning"],
+              image:
+                "https://blog.duolingo.com/content/images/2024/06/cover_Learning-with-Duolingo-Real-learners-share-their-progress.png",
+            },
+            // {
+            //   name: "Advaita",
+            //   description:
+            //     "An AI-based platform for students to analyse their psychological patterns and habits, suggesting a tech stack apt for them.",
+            //   tags: ["Flutter", "Dart"],
+            //   image:
+            //     "https://techcommunity.microsoft.com/t5/image/serverpage/image-id/182266i88209A8AF3421C4C/image-size/original?v=v2&px=-1",
+            // },
+            {
+              name: "Advaita",
+              description:
+                "An AI-based platform for students to analyse their psychological patterns and habits, suggesting a tech stack apt for them.",
+              tags: ["Flutter", "Dart", "Native", "Generative AI"],
+              image:
+                "https://cdn.mos.cms.futurecdn.net/9MZGCpvyGjuLKzAeyMd6hh.jpg",
+            },
+            {
+              name: "LearnX",
+              description:
+                "A learning platform to aid in mastering a tech stack with industry level experience based on codelabs, testimonials, and leetcode-style exercises.",
+              tags: ["Multiplatform", "Kotin", "Swift", "Typescript"],
+              image:
+                "https://duet-cdn.vox-cdn.com/thumbor/0x0:2640x1760/2400x1600/filters:focal(1320x880:1321x881):format(webp)/cdn.vox-cdn.com/uploads/chorus_asset/file/19344713/microsoftteams.jpg",
+            },
+            // {
+            //   name: "Mera Diary Dost",
+            //   description:
+            //     "A learning platform to aid in mastering a tech stack with industry level experience based on codelabs, testimonials, and leetcode-style exercises.",
+            //   tags: ["Multiplatform", "Kotin", "Swift", "Typescript"],
+            //   image:
+            //     "https://as1.ftcdn.net/v2/jpg/05/31/28/72/1000_F_531287298_XVzQIHGhAnngapSvtRJa8nzHkWSPk3iu.jpg",
+            // },
+            {
+              name: "Mera Diary Dost",
+              description:
+                "An intuitive simple diary application to write your personal diary using English typography in your own language.",
+              tags: ["Flutter", "Dart", "Machine Learning"],
+              image:
+                "https://fostips.com/wp-content/uploads/2022/08/ms-teams-feature.jpg",
+            },
+          ].map((project) => {
+            return (
+              <div className="border rounded-lg overflow-hidden">
+                {/* <img
+                src="https://support.content.office.net/en-us/media/02cd7402-1116-40fe-98d9-65bb8a48544c.png"
+                className="w-full aspect-[1.8] object-cover"
+              /> */}
+                <img
+                  src={project.image}
+                  className="w-full aspect-[1.8] object-cover"
+                />
+                <div className="p-5">
+                  <p className="text-xl">{project.name}</p>
+                  <p className="text-sm mt-4 mb-2 line-clamp-4">
+                    {project.description}
+                  </p>
+                  <div>
+                    {project.tags.map((tag) => {
+                      return (
+                        <p className="inline-flex py-[6px] px-[8px] rounded-md mx-[3px] my-[3px] border text-sm border-neutral-500 text-neutral-600">
+                          {tag}
+                        </p>
+                      );
+                    })}
+                  </div>
+                  <button className="border py-2 px-6 text-sm mt-8 text-blue-500 rounded-md font-medium">
+                    View Project
+                  </button>
+                </div>
               </div>
-              <button className="border py-2 px-6 text-sm mt-8 text-blue-500 rounded-md font-medium">
-                View Project
-              </button>
-            </div>
-          </div>
+            );
+          })}
         </div>
       </section>
     </div>
