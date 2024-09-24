@@ -8,7 +8,7 @@ export default function Page({ params }: { params: { id: string } }) {
       image:
         "https://www.sketchappsources.com/resources/source-image/microsoft-teams-illustration.png",
       color: "rgb(245,245,245)",
-      github: "",
+      github: "https://github.com/ManasMalla/CommunityX",
     },
     {
       name: "IndieLingo",
@@ -18,7 +18,7 @@ export default function Page({ params }: { params: { id: string } }) {
       image:
         "https://blog.duolingo.com/content/images/2024/06/cover_Learning-with-Duolingo-Real-learners-share-their-progress.png",
       color: "rgb(43,112,201)",
-      github: "",
+      github: "https://github.com/ManasMalla/IndieLingo",
       foregroundColor: "rgb(255, 255, 255)",
     },
     // {
@@ -36,7 +36,7 @@ export default function Page({ params }: { params: { id: string } }) {
       tags: ["Flutter", "Dart", "Native", "Generative AI"],
       image: "https://cdn.mos.cms.futurecdn.net/9MZGCpvyGjuLKzAeyMd6hh.jpg",
       color: "rgb(248,219,189)",
-      github: "",
+      github: "https://github.com/ManasMalla/advaita",
     },
     {
       name: "LearnX",
@@ -46,7 +46,7 @@ export default function Page({ params }: { params: { id: string } }) {
       image:
         "https://duet-cdn.vox-cdn.com/thumbor/0x0:2640x1760/2400x1600/filters:focal(1320x880:1321x881):format(webp)/cdn.vox-cdn.com/uploads/chorus_asset/file/19344713/microsoftteams.jpg",
       color: "rgb(255,255,255)",
-      github: "",
+      github: "https://github.com/ManasMalla/LearnX",
     },
     // {
     //   name: "Mera Diary Dost",
@@ -64,7 +64,7 @@ export default function Page({ params }: { params: { id: string } }) {
       image:
         "https://fostips.com/wp-content/uploads/2022/08/ms-teams-feature.jpg",
       color: "rgb(250,250,250)",
-      github: "",
+      github: "https://github.com/ManasMalla/mera-diary-dost",
     },
   ];
   const project = data.find(
@@ -134,7 +134,12 @@ export default function Page({ params }: { params: { id: string } }) {
           <div>
             <p className="text-lg">Repo</p>
             <div className="w-4/5 h-[1px] bg-neutral-400 my-[1px]" />
-            <p className="text-blue-600 font-medium p-3 text-sm">GitHub</p>
+            <a
+              href={project?.github}
+              className="text-blue-600 font-medium p-3 text-sm"
+            >
+              GitHub
+            </a>
           </div>
           <div>
             <p className="text-lg">License</p>
@@ -155,6 +160,53 @@ export default function Page({ params }: { params: { id: string } }) {
               <p className="text-blue-600 font-medium p-3 text-sm">{tag}</p>
             ))}
           </div>
+        </div>
+      </div>
+      <div className="mx-8 mb-8">
+        <p className="text-center text-3xl mt-20 mb-10">Related Projects</p>
+        <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4 md:gap-8">
+          {data
+            .filter((p0) => p0.tags[0] === project?.tags[0])
+            .map((project) => {
+              return (
+                <a
+                  key={project.name}
+                  href={
+                    "/projects/" +
+                    project.name.toLowerCase().replaceAll(" ", "-")
+                  }
+                >
+                  <div className="border rounded-lg overflow-hidden">
+                    {/* <img
+                src="https://support.content.office.net/en-us/media/02cd7402-1116-40fe-98d9-65bb8a48544c.png"
+                className="w-full aspect-[1.8] object-cover"
+              /> */}
+                    <img
+                      src={project.image}
+                      className="w-full aspect-[1.8] object-cover"
+                    />
+                    <div className="p-5">
+                      <p className="text-xl">{project.name}</p>
+                      <p className="text-sm mt-4 mb-2 line-clamp-4">
+                        {project.description}
+                      </p>
+                      <div>
+                        {project.tags.map((tag) => {
+                          return (
+                            <p className="inline-flex py-[6px] px-[8px] rounded-md mx-[3px] my-[3px] border text-sm border-neutral-500 text-neutral-600">
+                              {tag}
+                            </p>
+                          );
+                        })}
+                      </div>
+                      <button className="border py-2 px-6 text-sm mt-8 text-blue-500 rounded-md font-medium">
+                        View Project
+                      </button>
+                    </div>
+                  </div>
+                </a>
+              );
+            })}
         </div>
       </div>
     </div>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import LanguageSelector from "@/components/LanguageSelector";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -23,7 +24,21 @@ export default function RootLayout({
           href="//fonts.googleapis.com/css?family=Google+Sans:400,500,700|Roboto:400,400italic,500,500italic,700,700italic|Roboto+Mono:400,500,700&amp;display=swap"
         ></link>
       </head>
-      <body className={`antialiased`}>{children}</body>
+      <body className={`antialiased`}>
+        {children}
+        <div className="py-6 px-8 border-t">
+          <div>
+            <p className="text-xl font-medium">Manas Malla</p>
+          </div>
+          <div className="h-[1px] bg-neutral-300 my-6 w-full mx-auto" />
+          <div className="flex justify-between items-start font-medium text-base text-neutral-500">
+            <div className="flex gap-1">
+              <a>Terms</a>|<p>Privacy</p>
+            </div>
+            <LanguageSelector />
+          </div>
+        </div>
+      </body>
     </html>
   );
 }
