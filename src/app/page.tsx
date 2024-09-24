@@ -116,34 +116,41 @@ export default function Page() {
             },
           ].map((project) => {
             return (
-              <div className="border rounded-lg overflow-hidden">
-                {/* <img
+              <a
+                key={project.name}
+                href={
+                  "/projects/" + project.name.toLowerCase().replaceAll(" ", "-")
+                }
+              >
+                <div className="border rounded-lg overflow-hidden">
+                  {/* <img
                 src="https://support.content.office.net/en-us/media/02cd7402-1116-40fe-98d9-65bb8a48544c.png"
                 className="w-full aspect-[1.8] object-cover"
               /> */}
-                <img
-                  src={project.image}
-                  className="w-full aspect-[1.8] object-cover"
-                />
-                <div className="p-5">
-                  <p className="text-xl">{project.name}</p>
-                  <p className="text-sm mt-4 mb-2 line-clamp-4">
-                    {project.description}
-                  </p>
-                  <div>
-                    {project.tags.map((tag) => {
-                      return (
-                        <p className="inline-flex py-[6px] px-[8px] rounded-md mx-[3px] my-[3px] border text-sm border-neutral-500 text-neutral-600">
-                          {tag}
-                        </p>
-                      );
-                    })}
+                  <img
+                    src={project.image}
+                    className="w-full aspect-[1.8] object-cover"
+                  />
+                  <div className="p-5">
+                    <p className="text-xl">{project.name}</p>
+                    <p className="text-sm mt-4 mb-2 line-clamp-4">
+                      {project.description}
+                    </p>
+                    <div>
+                      {project.tags.map((tag) => {
+                        return (
+                          <p className="inline-flex py-[6px] px-[8px] rounded-md mx-[3px] my-[3px] border text-sm border-neutral-500 text-neutral-600">
+                            {tag}
+                          </p>
+                        );
+                      })}
+                    </div>
+                    <button className="border py-2 px-6 text-sm mt-8 text-blue-500 rounded-md font-medium">
+                      View Project
+                    </button>
                   </div>
-                  <button className="border py-2 px-6 text-sm mt-8 text-blue-500 rounded-md font-medium">
-                    View Project
-                  </button>
                 </div>
-              </div>
+              </a>
             );
           })}
         </div>
