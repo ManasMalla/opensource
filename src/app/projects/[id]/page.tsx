@@ -90,7 +90,7 @@ export default function Page({ params }: { params: { id: string } }) {
         </nav>
       </div>
       <div
-        className="flex w-full justify-between items-center text-center pt-24 mb-6 relative overflow-clip"
+        className="flex flex-col md:flex-row w-full justify-between md:items-center text-center pt-24 mb-6 relative overflow-clip"
         style={{
           background: project?.color,
         }}
@@ -103,7 +103,7 @@ export default function Page({ params }: { params: { id: string } }) {
             }`}
           />
           <h1
-            className="text-6xl mb-6"
+            className="text-5xl md:text-6xl mb-6"
             style={{
               color: project?.foregroundColor,
             }}
@@ -111,9 +111,9 @@ export default function Page({ params }: { params: { id: string } }) {
             {project?.name}
           </h1>
         </div>
-        <img src={project?.image} className="h-96" />
+        <img src={project?.image} className="mt-12 md:mt-0 md:h-96" />
       </div>
-      <div className="px-8 py-4 flex justify-between">
+      <div className="px-5 md:px-8 py-4 flex flex-col md:flex-row gap-8 justify-between">
         <div className="leading-8 max-w-[72ch]">
           {/* <p className="font-medium text-lg my-6">
             An operating system for a wide range of devices
@@ -130,7 +130,7 @@ export default function Page({ params }: { params: { id: string } }) {
             quickly bootstrap mobile and hardware projects.
           </p> */}
         </div>
-        <div className="grow max-w-80 p-5 py-8 bg-neutral-200/45 rounded-lg flex flex-col gap-6">
+        <div className="grow md:max-w-80 p-5 py-8 bg-neutral-200/45 rounded-lg flex flex-col gap-6">
           <div>
             <p className="text-lg">Repo</p>
             <div className="w-4/5 h-[1px] bg-neutral-400 my-[1px]" />
@@ -166,7 +166,10 @@ export default function Page({ params }: { params: { id: string } }) {
         <p className="text-center text-3xl mt-20 mb-10">Related Projects</p>
         <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4 md:gap-8">
           {data
-            .filter((p0) => p0.tags[0] === project?.tags[0])
+            .filter(
+              (p0) =>
+                p0.tags[0] === project?.tags[0] && p0.name !== project?.name
+            )
             .map((project) => {
               return (
                 <a
