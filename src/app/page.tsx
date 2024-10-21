@@ -59,6 +59,14 @@ export default function Page() {
         <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4 md:gap-8">
           {[
             {
+              name: "Material You React",
+              description:
+                "Material You React is a comprehensive library of React components that features our independent implementation of Google's Material You Design system.",
+              tags: ["Web", "React", "M3", "Typescript"],
+              image:
+                "https://github.com/material-components/material-web/raw/main/docs/images/material-web.gif",
+            },
+            {
               name: "CommunityX",
               description:
                 "A simple, easy-to-use community management platform to build rich conversations, enabling them with all the tools and features to build rich communities, set out to create engaging experiences, and solve the problems of the people around them.",

@@ -1,6 +1,16 @@
 export default function Page({ params }: { params: { id: string } }) {
   const data = [
     {
+      name: "Material You React",
+      description:
+        "Material You React is a comprehensive library of React components that features our independent implementation of Google's Material You Design system.",
+      tags: ["Web", "React", "M3", "Typescript"],
+      color: "rgb(43,112,201)",
+      image:
+        "https://github.com/material-components/material-web/raw/main/docs/images/material-web.gif",
+      github: "https://github.com/TheUltraCommunity/material-you-react",
+    },
+    {
       name: "CommunityX",
       description:
         "A simple, easy-to-use community management platform to build rich conversations, enabling them with all the tools and features to build rich communities, set out to create engaging experiences, and solve the problems of the people around them.",
